@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "envId": "nextcloud-6gkr6h40ad38788e",
+  "envId": "{{envId}}",
   "framework": {
     "name": "nextcloud",
     "plugins": {
@@ -11,9 +11,11 @@
           "mem": 1,
           "serviceName": "nextcloud",
           "servicePath": "/",
-          "uploadType": "package",
+          "uploadType": "image",
           "containerPort": 80,
-          
+          "imageInfo": {
+            "imageUrl": "ccr.ccs.tencentyun.com/phoneclick/nextcloud:latest"
+          }
           "envVariables": {
             "MYSQL_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
             "MYSQL_DATABASE": "nextcloud"
