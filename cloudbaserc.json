@@ -16,8 +16,6 @@
           "imageInfo": {
             "imageUrl": "xaiverniu/cloudreve:latest"
           },
-          "envVariables": {
-          },
           "volumeMounts": {
             "/cloudreve": "nextcloud-cfs",
             "/downloads": "nextcloud-cfs"
@@ -30,7 +28,7 @@
         {
           "type": "CFS",
           "name": "nextcloud-cfs"
-        }
+        },
       ]
     }
   }
