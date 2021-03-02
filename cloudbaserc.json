@@ -12,9 +12,15 @@
           "serviceName": "seafile",
           "servicePath": "/",
           "uploadType": "image",
-          "containerPort": 80,
+          "containerPort": 8000,
           "imageInfo": {
             "imageUrl": "ccr.ccs.tencentyun.com/tcb-100004082552-tlfc/nextcloud-4gsl68k686c12ad1_kodbox:latest"
+          },
+          "envVariables": {
+            "SEAFILE_NAME": "Seafile",
+            "SEAFILE_ADDRESS": "https://seafile-2g1vsjwt3af4624b-1256096275.ap-guangzhou.service.tcloudbase.com/",
+            "SEAFILE_ADMIN": "morirain@outlook.com",
+            "SEAFILE_ADMIN_PW": "passwd"
           },
           "volumeMounts": {
             "/seafile": "seafile-cfs"
