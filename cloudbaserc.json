@@ -20,7 +20,7 @@
           },
           "volumeMounts": {
             "/cloudreve": "nextcloud-cfs",
-            "/downloads": "nextcloud-cfs",
+            "/downloads": "nextcloud-cfs"
           }
         }
       }
