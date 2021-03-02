@@ -14,7 +14,7 @@
           "uploadType": "image",
           "containerPort": 80,
           "imageInfo": {
-            "imageUrl": "kodcloud/kodbox:v1.15"
+            "imageUrl": "ccr.ccs.tencentyun.com/tcb-100004082552-tlfc/nextcloud-4gsl68k686c12ad1_kodbox:latest"
           },
           "volumeMounts": {
             "/var/www/html": "kodbox-cfs"
