@@ -21,8 +21,7 @@
             "MYSQL_DATABASE": "cloudreve"
           },
           "volumeMounts": {
-            "/cloudreve": "cloudreve-cfs",
-            "/downloads": "nextcloud-cfs"
+            "/cloudreve": "cloudreve-cfs"
           }
         }
       }
