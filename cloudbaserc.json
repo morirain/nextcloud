@@ -2,14 +2,14 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "kodbox",
+    "name": "seafile",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
           "cpu": 0.5,
           "mem": 1,
-          "serviceName": "kodbox",
+          "serviceName": "seafile",
           "servicePath": "/",
           "uploadType": "image",
           "containerPort": 80,
@@ -17,7 +17,7 @@
             "imageUrl": "ccr.ccs.tencentyun.com/tcb-100004082552-tlfc/nextcloud-4gsl68k686c12ad1_kodbox:latest"
           },
           "volumeMounts": {
-            "/var/www/html": "kodbox-cfs"
+            "/seafile": "seafile-cfs"
           }
         }
       }
@@ -26,7 +26,7 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "kodbox-cfs"
+          "name": "seafile-cfs"
         }
       ]
     }
