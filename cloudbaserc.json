@@ -11,12 +11,11 @@
           "mem": 1,
           "serviceName": "kodbox",
           "servicePath": "/",
-          "uploadType": "repository",
-          "codeDetail": {
-            "name": "docker",
-            "url": "https://github.com/KodCloud-dev/docker"
-          },
+          "uploadType": "image",
           "containerPort": 80,
+          "imageInfo": {
+            "imageUrl": "kodcloud/kodbox:v1.15"
+          },
           "volumeMounts": {
             "/var/www/html": "kodbox-cfs"
           }
