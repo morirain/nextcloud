@@ -16,8 +16,12 @@
           "imageInfo": {
             "imageUrl": "xaiverniu/cloudreve:latest"
           },
+          "envVariables": {
+            "MYSQL_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
+            "MYSQL_DATABASE": "cloudreve"
+          },
           "volumeMounts": {
-            "/cloudreve": "nextcloud-cfs",
+            "/cloudreve": "cloudreve-cfs",
             "/downloads": "nextcloud-cfs"
           }
         }
@@ -27,8 +31,18 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "nextcloud-cfs"
+          "name": "cloudreve-cfs"
         },
+        {
+          "type": "CynosDB",
+          "name": "cloudreve",
+          "envMap": {
+            "IP": "DB_IP",
+            "PORT": "DB_PORT",
+            "USERNAME": "MYSQL_USER",
+            "PASSWORD": "MYSQL_PASSWORD"
+          }
+        }
       ]
     }
   }
