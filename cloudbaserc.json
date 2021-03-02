@@ -2,26 +2,25 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "nextcloud",
+    "name": "cloudreve",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
         "inputs": {
           "cpu": 0.5,
           "mem": 1,
-          "serviceName": "nextcloud",
+          "serviceName": "cloudreve",
           "servicePath": "/",
           "uploadType": "image",
-          "containerPort": 80,
+          "containerPort": 5212,
           "imageInfo": {
-            "imageUrl": "nextcloud:21"
+            "imageUrl": "xaiverniu/cloudreve:latest"
           },
           "envVariables": {
-            "MYSQL_HOST": "{{env.DB_IP}}:{{env.DB_PORT}}",
-            "MYSQL_DATABASE": "nextcloud"
           },
           "volumeMounts": {
-            "/var/www/html": "nextcloud-cfs"
+            "/cloudreve": "nextcloud-cfs",
+            "/downloads": "nextcloud-cfs",
           }
         }
       }
@@ -31,16 +30,6 @@
         {
           "type": "CFS",
           "name": "nextcloud-cfs"
-        },
-        {
-          "type": "CynosDB",
-          "name": "nextcloud",
-          "envMap": {
-            "IP": "DB_IP",
-            "PORT": "DB_PORT",
-            "USERNAME": "MYSQL_USER",
-            "PASSWORD": "MYSQL_PASSWORD"
-          }
         }
       ]
     }
